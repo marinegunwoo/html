@@ -1,0 +1,107 @@
+/* 글꼴 설정 */
+@font-face {
+    font-family: abster;
+    src: url(font/abster-webfont.woff) format('woff');
+} 
+/* 전체 선택 */
+*{
+    margin: 0;
+    /* 바깥여백 0으로 */
+    padding: 0;
+    /* 안쪽여백 0으로 */
+    box-sizing: border-box;
+    /* 화면 영역 크기 제한 */
+}
+/* 배경처리 */
+.container{
+    /* 클래스라 .container */
+    width: 100%;
+    /* 가로 시험때 주어짐 */
+    height: 100vh;
+    /* 높이 시험때 주어짐 */
+    background: linear-gradient(rgba(0,0,10,2),rgba(0,0,14,2)), url(./images/room.jpg);
+    /* 배경 그라데이션값 왼쪽이 위 오른쪽이 아래(이건 시험때 주어짐), url치고 ./로 이미지 있는 파일 찾아감 */
+}
+/* 헤더배치 */
+.container .header{
+    width: 80%;
+    height: 80px;
+    margin: 0 auto;
+    /* header 영역의 크기와 여백 설정 margin 왼쪽은 상하 오른쪽은 좌우 */
+    display: flex;
+    justify-content: space-between;
+    /* 정렬방법 flex 배치 방법 space-between */
+}
+/* 글자로고 */
+.container .header h1 a{
+    /* 컨테이너 안에 헤더 안에 h1 a 선택 */
+    color: white;
+    /* 로고 색깔 */
+    font-family: abster;
+    /* 로고 글꼴 */
+    text-decoration: none;
+    /* 밑줄 그어진거 없애기 */
+}
+/* 메뉴요소 배치 */
+.container .nav ul li{
+    display: inline-flex;
+    /* 그냥플렉스는 박스 단위 인라인 플렉스는 인라인 단위 */
+    justify-content: space-between;
+    /* 플렉스가 아니라 display: inline-block; 로 써도됨 */
+    margin: 0 10px;
+}
+/* 메뉴요소 스타일링 */
+.container .nav ul li a{
+    /* a가 텍스트까지 */
+    color: white;
+    text-decoration: none;
+    /* 밑줄 그어진거 없애기 */
+}
+/* 메뉴요소 마우스이벤트 */
+.container .nav ul li a:hover{
+    /* hover은 마우스가 해당 블록 위에 올려져 있을때(클릭) */
+    color: aquamarine;
+}
+/* 화면 중앙 요소 배치 */
+.container .hero{
+    position: absolute;
+    /* 기준점을 화면 기준으로 */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    /* 중앙으로 배치 */
+    color: white;
+    text-align: center;
+    /* 텍스트 가운데 정렬 */
+}
+/* 화면 중앙 요소 제목 */
+.container .hero h2{
+    font-size: 40px;
+    /* 글자크기 */
+    margin-bottom: 20px;
+    /* 아래 설명과 띄우기 (안해도됨) */
+}
+/* 화면 중앙 요소 본문 */
+.container .hero p{
+    color: yellowgreen;
+}
+/* 화면 중앙 요소 버튼 */
+.container .hero button{
+    background-color: none;
+    /* 배경없애기 */
+    border: 2px solid greenyellow;
+    /* 태두리 색깔&두께 solid 선 형태 ex) 점선 실선 */
+    color: white;
+    padding: 10px 15px;
+    /* 크기 */
+    border-radius: 20px;
+    /* 동그랗게 하는거 */
+    margin: 30px;
+}
+/* 화면 중앙 요소 버튼 처리 */
+.container .hero button:hover{
+    background-color: white;
+    /* 배경색 */
+    color: aquamarine;
+    /* 글자색 */
+}
