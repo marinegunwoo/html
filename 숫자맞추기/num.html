@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자맞추기</title>
+    <script>
+        let num=Math.floor(Math.random()*100);
+        function chek(){
+            let x=document.getElementById("x").value;
+            if(num == x){
+                document.getElementById("ans").value="정답";
+                document.getElementById("im").src="!.png";
+            }
+            else if(num < x){
+                document.getElementById("ans").value="down";
+                document.getElementById("im").src="down.png";
+            }
+            else{
+                document.getElementById("ans").value="up";
+                document.getElementById("im").src="up.png";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>숫자맞추기</h1><br>
+    <form action="...">
+        <img src="a.png" id="im" width="300" height="300"><br>
+        수를 맞춰보세요 : <input id="x"/><br/>
+        답 : <input id="ans"/><br/>
+        <input type="button" value="확인" onclick="chek();">
+    </form>
+</body>
+</html>
