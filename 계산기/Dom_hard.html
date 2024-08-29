@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기</title>
+    <style>
+        .button{
+            padding:10px;
+            width: 10px;
+            height: 10px;
+        }
+    </style>
+    <script>
+        function add(){
+            document.getElementById("result").value= parseInt(document.getElementById("number1").value)+parseInt(document.getElementById("number2").value)
+        }
+        function mi(){
+            document.getElementById("result").value= parseInt(document.getElementById("number1").value)-parseInt(document.getElementById("number2").value)
+        }
+        function gop(){
+            document.getElementById("result").value= parseInt(document.getElementById("number1").value)*parseInt(document.getElementById("number2").value)
+        }
+        function na(){
+            document.getElementById("result").value= parseInt(document.getElementById("number1").value)/parseInt(document.getElementById("number2").value)
+        }
+        function gopgop(){
+            document.getElementById("result").value= parseInt(document.getElementById("number1").value)**parseInt(document.getElementById("number2").value)
+        }
+    </script>
+</head>
+<body>
+    숫자 1: <input type=text id="number1"><br>
+    숫자 2: <input type=text id="number2"><br>
+    <input type=button value="+" onClick="add()" class="button">
+    <input type=button value="-" onClick="mi()" class="button">
+    <input type=button value="*" onClick="gop()" class="button">
+    <input type=button value="/" onClick="na()" class="button">
+    <input type=button value="**" onClick="gopgop()" class="button"><br>
+    <a href="two.html">두점 사이의 거리</a><br> <!--두점사이의 거리를 계산할 수 있는 사이트로 이동합니다.-->
+    연산결과: <input type=text id="result" value="">
+</body>
+</html>
