@@ -32,16 +32,17 @@
     <script>
         let x;
         let y;
+        let heart;
         let grid = document.getElementById("board");
         function genGrid() {
             grid.innerHTML = "";
-            for (let i = 0; i < y; i++) {
+            for (let i = 0; i < y; i++) { //세로를 y만큼 생성
                 row = grid.insertRow(i);
-                for (var j = 0; j < x; j++) {
+                for (var j = 0; j < x; j++) { //가로를 x만큼 생성
                     cell = row.insertCell(j);
                     cell.onclick = function () { clickBox(this); };
                     var mine = document.createAttribute("mine");
-                    if (Math.random() < 0.2)
+                    if (Math.random() < 0.15) //15%로 지뢰가 터짐
                         mine.value = "true";
                     else
                         mine.value = "false";
@@ -49,16 +50,23 @@
                 }
             }
         }
-        function re(){
+        function re(){ //가로와 세로를 입력받고 가로 세로 만큼 지뢰 생성
             x=parseInt(prompt("가로"));
             y=parseInt(prompt("세로"));
+            alert("목숨은 5로 시작합니다.");
+            heart=5;
             genGrid();
         }
         function clickBox(cell) {
             if (cell.getAttribute("mine") == "true") {
                 cell.className = "mine";
-                alert("게임이 종료되었습니다.");
-                call();
+                alert("목숨이 줄었습니다.");
+                heart-=1 //지뢰가 터질때마다 목숨이 1씩 감소
+                alert("목숨이 "+heart+"만큼 남았습니다.")
+                if (heart==0){
+                    alert("게임을 다시 시작합니다.");
+                    re();//게임이 종료되면 다시 시작
+                }
             } else {
                 cell.className = "clicked";
             }
